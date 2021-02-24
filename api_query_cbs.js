@@ -1,5 +1,5 @@
 async function fetchData() {
-    const result = await fetch("https://apis.cbs.gov.il/series/data/path?id=11,5,3,2,2&last=24&format=json&download=false&data=1&time=3")
+    const result = await fetch("https://apis.cbs.gov.il/series/data/path?id=11,5,3,2,2&last=12&format=json&download=false&data=1&time=3")
     const res = await result.json()
     const data = res['DataSet']['Series'][0]['obs']
     console.log(data)
@@ -22,19 +22,32 @@ function makeChart(labels, chartData) {
         data: {
             labels: labels,
             datasets: [{
-                label: 'חודש',
+                label: 'אחוז מועסקים',
                 data: chartData,
                 backgroundColor: 'red',
                 borderColor: 'blue',
-                borderWidth: 1
+                borderWidth: 1,
+                fill: false
             }]
         },
         options: {
+
             xAxisId: "חודש",
+
             scales: {
+                xAxes: [{
+                    scaleLabel: {
+                        display: true,
+                        labelString: 'חודש'
+                    }
+                }],
                 yAxes: [{
+                    scaleLabel: {
+                        display: true,
+                        labelString: 'אחוז מועסקים'
+                    },
                     ticks: {
-                        beginAtZero: true
+                        beginAtZero: false
                     }
                 }]
             }
