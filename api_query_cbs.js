@@ -21,8 +21,8 @@ async function fetchData() {
         labels.push(data[line]['TimePeriod'])
         chartData.push(data[line]['Value'])
     }
-    const mohData = await fetchMohData()
-    makeChart(labels, chartData, mohData)
+    // const mohData = await fetchMohData()
+    makeChart(labels, chartData)
 }
 
 let data = fetchData()
@@ -89,14 +89,7 @@ function makeChart(labels, lamasData, mohData) {
                 fill: false,
                 // steppedLine: 'middle'
 
-            }, {
-                label: 'נפטרים מקורונה',
-                data: mohData,
-                backgroundColor: 'red',
-                borderColor: 'blue',
-                borderWidth: 5,
-                fill: false,
-            }]
+            }],
         },
         options: {
             xAxisId: "חודש",
