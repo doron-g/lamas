@@ -1,12 +1,19 @@
-const cbsDataOptions = {
-    'path': 'https://apis.cbs.gov.il/series/data/path?', //constant path for the data, there is a different path for the tittles
-    'last': '12', //number of month
-    'data': '1', //1=original data
-    'time': '3', //1=year, 2= quarters,3=months
-    'id': '11,5,3,2,2', //well....
-    'format': 'json', //xml or json
-    'download': 'false' // if you want to download the file
-}
+const periodElm = document.getElementById("period")
+periodElm.addEventListener('change', () => {
+    const period = periodElm.value
+    console.log(period)
+})
+
+    const cbsDataOptions = {
+        'path': 'https://apis.cbs.gov.il/series/data/path?', //constant path for the data, there is a different path for the tittles
+        'last': '12', //number of periods
+        'data': '1', //1=original data
+        'time': "3", //period type: 1=year, 2= quarters,3=months
+        'id': '11,5,3,2,2', //well....
+        'format': 'json', //xml or json
+        'download': 'false' // if you want to download the file
+    }
+
 
 
 async function fetchData() {

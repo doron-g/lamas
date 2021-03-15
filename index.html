@@ -1,15 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="he" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <title>נתונים מהלמס</title>
+    <link rel="stylesheet" href="style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"
             integrity="sha512-d9xgZrVZpmmQlfonhQUvTR7lMPtO7NkZMkA0ABN3PHCbKA5nqylQ/yWlFAyY6hYgdF1Qh6nYiuADWwKB4C2WSw=="
             crossorigin="anonymous"></script>
 </head>
 <body>
+<h1>אחוז מועסקים לפי תקופות</h1>
+<br></br>
+<label for="period">בחר תצוגה:</label>
+<select name="period" id="period">
+    <option value="3">לפי חודשים</option>
+    <option value="2">לפי רבעונים</option>
+    <option value="1">לפי שנים</option>
+</select>
+
+
 <div style='width:90%; height:90%;'>
-<canvas id="myChart" ></canvas>
+    <canvas id="myChart"></canvas>
 </div>
 
 </body>
