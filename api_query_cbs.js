@@ -1,3 +1,5 @@
+
+
 const periodElm = document.getElementById("period")
 periodElm.addEventListener('change', () => {
     const period = periodElm.value
@@ -108,6 +110,7 @@ function makeChart(labels, lamasData, mohData) {
             }],
         },
         options: {
+            maintainAspectRatio: false,
             legend: {
                 display: false
             },
