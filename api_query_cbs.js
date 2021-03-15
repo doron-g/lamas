@@ -22,7 +22,7 @@ async function fetchData() {
         chartData.push(data[line]['Value'])
     }
     // const mohData = await fetchMohData()
-    makeChart(labels, chartData)
+    makeChart(labels.reverse(), chartData.reverse())
 }
 
 let data = fetchData()
