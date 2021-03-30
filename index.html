@@ -10,31 +10,48 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"
             integrity="sha512-d9xgZrVZpmmQlfonhQUvTR7lMPtO7NkZMkA0ABN3PHCbKA5nqylQ/yWlFAyY6hYgdF1Qh6nYiuADWwKB4C2WSw=="
             crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/airtable@0.10.1/build/airtable.browser.js"></script>
+    <style>
+        /* Chrome, Safari, Edge, Opera */
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        /* Firefox */
+        input[type=number] {
+            -moz-appearance: textfield;
+        }
+    </style>
 </head>
 <body>
 <h1>אחוז מועסקים בישראל לפי תקופות</h1>
 <br></br>
 <label for="period">בחר תצוגה:</label>
 <select name="period" id="period">
-    <option value="3">לפי חודשים</option>
-    <option value="2">לפי רבעונים</option>
-    <option value="1">לפי שנים</option>
+    <option value="dataByMonth">לפי חודשים</option>
+    <option value="dataByQuarter">לפי רבעונים</option>
+    <option value="dataByYear">לפי שנים</option>
 </select>
-<label for="last">בחר מספר תקופות</label>
-<select name="last" id="last">
-    <option value="1">1</option>
-    <option value="2">2</option>
-    <option value="3">3</option>
-    <option value="4">4</option>
-    <option value="5">5</option>
-    <option value="6">6</option>
-    <option value="7">7</option>
-    <option value="8">8</option>
-    <option value="9">9</option>
-    <option value="10">10</option>
-    <option value="11">11</option>
-    <option value="12">12</option>
-</select>
+<label for="maxRecord" id="periodType">בחר מספר חודשים</label>
+<input name ="maxRecord" type="number" id="maxRecord">
+<!--<label for="last">בחר מספר תקופות</label>-->
+<!--<select name="last" id="last">-->
+<!--    <option value="1">1</option>-->
+<!--    <option value="2">2</option>-->
+<!--    <option value="3">3</option>-->
+<!--    <option value="4">4</option>-->
+<!--    <option value="5">5</option>-->
+<!--    <option value="6">6</option>-->
+<!--    <option value="7">7</option>-->
+<!--    <option value="8">8</option>-->
+<!--    <option value="9">9</option>-->
+<!--    <option value="10">10</option>-->
+<!--    <option value="11">11</option>-->
+<!--    <option value="12">12</option>-->
+<!--</select>-->
 
 
 <div id="chartContainer">
@@ -43,5 +60,6 @@
 
 </body>
 <script src="api_query_cbs.js"></script>
+<script src="airTable.js"></script>
 <!--<script src="get_moh_data.js"></script>-->
 </html>
