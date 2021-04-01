@@ -19,4 +19,3 @@ url = "https://apis.cbs.gov.il/series/data/path?id=11,5,3,2,2&last=24&format=jso
 response = requests.request("GET", url1)
 res = response.json()
 data = res['DataSet']['Series'][0]['obs']
-print(data)
